@@ -47,6 +47,30 @@ $ cd wasm_sqlite_step1
 $ npm install @sqlite.org/sqlite-wasm
 ```
 
+* `vite.config.ts`を修正
+
+`headers`と`optimizeDeps`を追加します
+
+```tyescript:vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    headers: {
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+    },
+  },
+  optimizeDeps: {
+    exclude: ['@sqlite.org/sqlite-wasm'],
+  },
+});
+
+```
+
 ### SQLite初期化モジュール
 
 * sqlite3InitModule()でSQLiteのロード後、Databaseの読み込みを行う
