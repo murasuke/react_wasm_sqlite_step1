@@ -4,7 +4,8 @@
 
 [SQLiteの正式なWebAssembly版「SQLite3 WASM/JS」が登場 － Publickey](https://www.publickey1.jp/blog/22/sqlitewebassemblysqlite3_wasmjs.html)
 
-SQLite3をWebAssembly化した「SQLite3 WASM/JS」が気になっていたので、React上で動作するサンプルを作成してみました
+SQLite3をWebAssembly化した「SQLite3 WASM/JS」が気になっていたので、React上で動作するサンプルを作成してみました。
+(Web標準になれなかった[Web SQL Database](https://www.w3.org/TR/webdatabase/)の代わりに利用できればと)
 
 SQLite Wasmの実行方法は3つあります。今回は一番単純な「メインスレッド内で実行」パターンを試しました
 
