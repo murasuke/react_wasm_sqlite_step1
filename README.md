@@ -14,6 +14,7 @@ SQLite Wasmの実行方法は3つあります。今回は一番単純な「メ�
 1. [メインスレッドで実行](https://www.npmjs.com/package/@sqlite.org/sqlite-wasm#in-the-main-thread-without-opfs)
 
 
+
 ### 画面 (ボタンを押すだけ、最低限のサンプル)
 
   ![img00](./img/img00.png)
@@ -22,7 +23,10 @@ SQLite Wasmの実行方法は3つあります。今回は一番単純な「メ�
 * React環境はViteで作成しています
 * localStorageに保存しているため、ブラウザを閉じても永続化されます(最大10MB)
 
-## サンプルの内容
+作成したソースはこちら
+https://github.com/murasuke/react_wasm_sqlite_step1
+
+## サンプルソースの内容
 * WASM版SQLite3をブラウザ上で実行
 * localStorageにDBを作成
 * テーブル作成
