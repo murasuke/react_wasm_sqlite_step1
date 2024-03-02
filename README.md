@@ -202,6 +202,10 @@ export default App;
 
 ## 動作確認
 
+```bash
+$ npm run dev
+```
+
 * 初回実行時
   * DBサイズ`size`は0byteです
   * テーブル作成＋2行追加されたことが確認できます
