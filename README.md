@@ -7,7 +7,7 @@
 SQLite3をWebAssembly化した「SQLite3 WASM/JS」が気になっていたので、React上で動作するサンプルを作成してみました。
 (Web標準になれなかった[Web SQL Database](https://www.w3.org/TR/webdatabase/)の代わりに利用できればと)
 
-SQLite Wasmの実行方法は3つあります。今回は一番単純な「メインスレッド内で実行」パターンを試しました
+SQLite Wasmの実行方法は3つあります。今回は一番単純な「メインスレッドで実行」パターンを試しました
 
 1. [ラップされたWorderをメインスレッドで実行(推奨)](https://www.npmjs.com/package/@sqlite.org/sqlite-wasm#in-a-wrapped-worker-with-opfs-if-available)
 1. [Web Workerで実行](https://www.npmjs.com/package/@sqlite.org/sqlite-wasm#in-a-worker-with-opfs-if-available)
