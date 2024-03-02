@@ -51,7 +51,7 @@ $ npm install @sqlite.org/sqlite-wasm
 
 `headers`と`optimizeDeps`を追加します
 
-```tyescript:vite.config.ts
+```typescript:vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
