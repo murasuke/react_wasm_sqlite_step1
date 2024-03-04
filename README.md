@@ -4,7 +4,8 @@
 
 [SQLiteの正式なWebAssembly版「SQLite3 WASM/JS」が登場 － Publickey](https://www.publickey1.jp/blog/22/sqlitewebassemblysqlite3_wasmjs.html)
 
-SQLite3をWebAssembly化した「SQLite3 WASM/JS」が気になっていたので、React上で動作するサンプルを作成してみました。
+SQLite3をWebAssembly化した「SQLite3 WASM/JS」が気になっていたので、React上で動作する[サンプル](https://murasuke.github.io/react_wasm_sqlite_step1/)を作成してみました。
+
 (Web標準になれなかった[Web SQL Database](https://www.w3.org/TR/webdatabase/)の代わりに利用できればと)
 
 SQLite Wasmの実行方法は3つあります。今回は一番単純な「メインスレッドで実行」パターンを試しました
@@ -15,7 +16,7 @@ SQLite Wasmの実行方法は3つあります。今回は一番単純な「メ�
 
 
 
-### 画面 (ボタンを押すだけ、最低限のサンプル)
+### サンプルプログラムの動作確認は[こちらをクリック](https://murasuke.github.io/react_wasm_sqlite_step1/)
 
   ![img00](./img/img00.png)
 
@@ -25,6 +26,9 @@ SQLite Wasmの実行方法は3つあります。今回は一番単純な「メ�
 
 作成したソースはこちら
 https://github.com/murasuke/react_wasm_sqlite_step1
+
+GitHub Pagesのページ
+https://murasuke.github.io/react_wasm_sqlite_step1/
 
 ## サンプルソースの内容
 * WASM版SQLite3をブラウザ上で実行
@@ -242,6 +246,57 @@ $ npm run dev
 
   ![img20](./img/img20.png)
 
+## おまけ GitHub Pagesにデプロイ
+
+### `vite.config.ts` に`base:`を追加
+
+`react_wasm_sqlite_step1` の部分は、リポジトリ名です
+
+```javascript:vite.config.ts
+export default defineConfig({
+  base: process.env.GITHUB_PAGES ? 'react_wasm_sqlite_step1' : './',
+```
+
+### `package.json` の`build'を変更
+
+* `dist`を`docs`にコピー
+
+```json:package.json
+    "build": "tsc && vite build && cp -r dist docs",
+```
+
+![img30](./img/img30.png)
+
+### GitHub Pagesで公開するための設定
+
+* ①`Setting` ⇒ ②`Pages` をクリック
+* ③公開するブランチ(main or master)と、公開するディレクトリ`docs`を選択して`Save`をクリック
+
+### ビルドとデプロイ
+
+* ビルドの際`docs`ディレクトリが作成されることを確認（公開用）
+```bash
+$ npm run build
+```
+
+* デプロイ
+
+コミットしてから、通常通りpushを行う
+
+```bash
+$ git push
+```
+
+
+### GitHub Pagesで公開されたことを確認
+
+数分待ってから`https://murasuke.github.io/react_wasm_sqlite_step1/`へアクセスすると、GitHub Pagesで公開されたことが確認できる
+
+![img40](./img/img40.png)
+
+(※想定通り動作していることが確認できた)
+
+
 
 ## 参考サイト
 
@@ -254,3 +309,5 @@ $ npm run dev
 * [SQLite: Persistent Storage Options](https://sqlite.org/wasm/doc/trunk/persistence.md)
 
 * [SQLite公式のWASM実装を試す](https://leaysgur.github.io/posts/2022/12/02/134526/)
+
+* [ReactをGitHub Pagesにデプロイしよう〜Vite編〜](https://qiita.com/tat_mae084/items/4051c61926dc8165e80b)
