@@ -46,8 +46,8 @@ https://murasuke.github.io/react_wasm_sqlite_step1/
   https://www.npmjs.com/package/@sqlite.org/sqlite-wasm
 
 ```bash
-$ npm create vite@latest wasm_sqlite_step1  -- --template react-ts
-$ cd wasm_sqlite_step1
+$ npm create vite@latest react_wasm_sqlite_step1  -- --template react-ts
+$ cd react_wasm_sqlite_step1
 $ npm install @sqlite.org/sqlite-wasm
 ```
 
@@ -265,12 +265,13 @@ export default defineConfig({
     "build": "tsc && vite build && cp -r dist docs",
 ```
 
-![img30](./img/img30.png)
 
 ### GitHub Pagesで公開するための設定
 
 * ①`Setting` ⇒ ②`Pages` をクリック
 * ③公開するブランチ(main or master)と、公開するディレクトリ`docs`を選択して`Save`をクリック
+
+![img30](./img/img30.png)
 
 ### ビルドとデプロイ
 
