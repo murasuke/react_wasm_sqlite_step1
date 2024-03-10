@@ -295,7 +295,7 @@ $ git push
 
 ![img40](./img/img40.png)
 
-(※想定通り動作していることが確認できた)
+(※一応動くが、http headerにCOOPとCOEPを設定できないので、警告が出る)
 
 
 
